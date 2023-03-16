@@ -1,0 +1,135 @@
+.header {
+	margin: 30px 0 155px 0;
+	@media (max-width: $md3){
+		margin: 30px 0 120px 0;
+	}
+	@media (max-width: $md4){
+		margin: 30px 0 90px 0;
+	}
+	&__container {
+		max-width: 1030px;
+		margin: 0 auto;
+		@media (max-width: 1060px) {
+			max-width: 930px;
+		}
+		@media (max-width: $md2) {
+			max-width: 750px;
+		}
+		@media (max-width: $md3) {
+			padding: 0 15px;
+		}
+	}
+
+
+	&__list {
+		@include flexbox();
+		justify-content: flex-end;
+		align-items: center;
+		li {
+			margin-right: 40px;
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+		@media (max-width: $md3) {
+			display: block;
+			text-align: center;
+			padding: 100px 0 0 0;
+			li {
+				margin-right: 0px;
+				margin-bottom: 50px;
+			}
+		}
+	}
+
+	&__link {
+	color: #000;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 29px;
+	@include anim(0.3s, 0s);
+	@media (max-width: $md3) {
+		font-size: 40px;
+	}
+	&:hover{
+		color: rgb(236, 40, 40);
+		cursor: pointer;
+	}
+	}
+
+	&__burger {
+		display: none;
+	}
+}
+
+@media (max-width: $md3){
+   .header__burger {
+		display: block;
+		position: absolute;
+      right: 40px;
+      top: 60px;
+		width: 35px;
+		height: 20px;
+		z-index: 30;
+      @media (max-width: $md4){
+         right: 15px;
+         top: 45px;
+      }
+	}
+	.header__burger span{
+		position: absolute;
+		background-color: #000;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+		@include anim(0.3s, 0s);
+	}
+	.header__burger:before,
+	.header__burger:after{
+		content: '';
+		background-color: #000;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+      @include anim(0.3s, 0s);
+	}
+	.header__burger:before{
+		top: 0;
+	}
+	.header__burger:after{
+		bottom: 0;
+	}
+
+	.header__burger.active span{
+      @include scale(0);
+	}
+
+	.header__burger.active:before{
+      @include rotate(45deg);
+		top: 9px;
+	}
+	.header__burger.active:after{
+		@include rotate(-45deg);
+		bottom: 9px;
+	}
+
+   .header__menu {
+		position: fixed;
+		z-index: 20;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+      @include anim(0.3s, 0s);
+		background-color: #f3f1fa;
+      padding: 70px 10px 20px 10px;
+	}
+
+	.header__menu.active{
+		top: 0;
+	}
+ 
+}

@@ -1,0 +1,83 @@
+
+//<МИКСИНЫ>
+@mixin anim($time,$delay){-webkit-transition: all $time ease $delay;-moz-transition: all $time ease $delay;-ms-transition: all $time ease $delay;-o-transition: all $time ease $delay;transition: all $time ease $delay;}
+@mixin anim_cubic($time, $delay) {-webkit-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-moz-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-ms-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-o-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;}
+@mixin rotate($deg){-moz-transform: rotate($deg);-ms-transform: rotate($deg);-webkit-transform: rotate($deg);-o-transform: rotate($deg);transform: rotate($deg);}
+@mixin scale($num){-moz-transform: scale($num);-ms-transform: scale($num);-webkit-transform: scale($num);-o-transform: scale($num);transform: scale($num);}
+@mixin skew($num){-webkit-transform: skewX($num);-moz-transform: skewX($num);-ms-transform: skewX($num);-o-transform: skewX($num);transform: skewX($num);}
+@mixin cnt($h){display: flex;flex-direction: column;height: $h;text-align: center;align-items: stretch;justify-content: center;}
+@mixin tr($x,$y,$z){transform: translate3d($x, $y, $z);};
+@mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;font-size: 0;}
+@mixin flexorder($val){-webkit-box-ordinal-group: $val;-moz-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-order: $val;order: $val;}
+
+//<ШРИФТЫ>
+// &display=swap — временно отобразить системный шрифт &subset=cyrillic-ext
+// 100-thin,300-lite,400-normal,500-medium,600-semibold,700-bold,900-black
+@import url(https://fonts.googleapis.com/css?family=Heebo:regular,500,700,900&display=swap);
+
+$fontfamily:"Heebo";
+
+//<ПЕРЕМЕННЫЕ>
+$minwidth:320px;
+$mw: 858px;
+$md1:1200px; // max-width: 970px;
+$md2:992px;  // max-width: 750px;
+$md3:768px;  // max-width: none;
+$md4:420px;
+
+//<ОБНУЛЕНИЕ
+@import "nullstyle.scss";
+
+//<ОБОЛОЧКА>
+.wrapper{
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+   color: #21243D;;
+}
+
+//<ОСНОВНАЯ СЕТКА>
+.container{
+   max-width: $mw;
+   margin: 0px auto;
+   @media (max-width: $md1) {
+      max-width: 930px;
+   }
+   @media (max-width: $md2) {
+      max-width: 740px;
+   }
+   @media (max-width: $md3) {
+      max-width: none;
+      padding: 0 25px;
+   }
+}
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+@import "header.scss";
+@import "footer.scss";
+@import "main.scss";
+@import "unifying.scss";
+@import "works.scss";
+@import "block.scss";
+@import "contacts.scss";
+
+
+//<ОСНОВНОЙ БЛОК>
+
+@media (max-width: $md3) {
+   body.lock{
+      overflow: hidden;
+   }
+}
+
+.page {
+   width: 100%;
+   height: 100%;
+   @include flexbox();
+   flex-direction: column;
+}
+
+.content{
+   flex: 1 0 auto;   
+}
+

@@ -1,0 +1,22 @@
+.footer {
+   margin: 0px 0px 54px 0px;
+
+   &__top {
+      margin: 0px 0px 26px 0px;
+      text-align: center;
+   }
+
+   &__links {
+      margin: 0px 35px 0px 0px;
+      &:last-child{
+         margin: 0px 0px 0px 0px;
+      }
+   }
+
+   &__bottom {
+      font-weight: 400;
+      font-size: 14px;
+      text-align: center;
+   }
+}
+

@@ -1,0 +1,115 @@
+.works {
+   margin: 0px 0px 160px 0px;
+   @media (max-width: $md3) {
+      margin: 0px 0px 100px 0px;
+   }
+   &__header{
+      font-weight: 900;
+      font-size: 44px;
+      line-height: 60px;
+      margin: 0px 0px 50px 0px;
+      @media (max-width: $md3) {
+         font-weight: 700;
+         font-size: 36px;
+         line-height: 60px;
+         margin: 0px 0px 40px 0px;
+      }
+   }
+   &__body{
+      @media (max-width: $md3) {
+         @include flexbox();
+         overflow: auto;
+      }
+   }
+   &__featured{
+      background-color: inherit;
+      @media (max-width: $md3) {
+         text-align: center;
+      }
+   }
+   &__row {
+      position: relative;
+      @include flexbox();
+      margin: 0px 0px 64px 0px;
+      &::after{
+         content: '';
+         position: absolute;
+         left: 0;
+         bottom: -32px;
+         height: 1px;
+         width: 100%;
+         background-color: rgb(199, 185, 185);
+      }
+      @media (max-width: $md3) {
+         flex-direction: column;
+         flex: 1 0 90%;
+      }
+   }
+
+   &__img {
+      flex: 0 0 auto;
+      padding: 0px 18px 0px 0px;
+      @media (max-width: $md3) {
+         margin: 0 0 20px 0;
+      }
+   }
+
+   &__column {
+      flex: 1 1 auto;
+      @media (max-width: $md3) {
+         margin: 0px 20px 0px 0px;
+      }
+   }
+
+   &__tittle {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 44px;
+      margin: 0px 0px 7px 0px;
+      @media (max-width: $md3) {
+         font-size: 22px;
+         line-height: 30px;
+      }
+   }
+
+   &__string {
+      @include flexbox();
+      margin: 0px 0px 15px 0px;
+   }
+
+   &__year {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 60px;
+      background-color: #21243D;
+      color: #fff;
+      width: 62px;
+      height: 26px;
+      border-radius: 16px;
+      margin: 0px 25px 0px 0px;
+      @media (max-width: $md3) {
+         font-size: 16px;
+      }
+   }
+
+   &__year-text {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 29px;
+      color: #8695A4;
+      @media (max-width: $md3) {
+         font-size: 16px;
+         line-height: 24px;
+      }
+   }
+
+}
+.works-flex{
+   @media (max-width: $md3) {
+      display: block;
+   }
+}
+

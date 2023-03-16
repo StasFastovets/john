@@ -1,0 +1,84 @@
+.block {
+   margin: 0px 0px 140px 0px;
+   @media (max-width: $md3) {
+      margin: 0px 0px 120px 0px;
+   }
+
+   &__caption {
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 60px;
+      margin: 0px 0px 66px 0px;
+      @media (max-width: $md3) {
+         font-size: 30px;
+         margin: -20px 0px 40px 0px;
+      }
+   }
+
+   &__row {
+      margin: 0px 0px 68px 0px;
+      position: relative;
+      &::after{
+         content: '';
+         position: absolute;
+         left: 0;
+         bottom: -34px;
+         height: 1px;
+         width: 100%;
+         background-color: rgb(199, 185, 185);
+      }
+      @media (max-width: $md3) {
+         margin: 0px 0px 54px 0px;
+         &::after{
+            bottom: -27px;
+         }
+      }
+   }
+
+   &__header {
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 44px;
+      margin: 0px 0px 20px 0px;
+      @media (max-width: $md3) {
+         font-size: 26px;
+         line-height: 38px;
+      }
+   }
+
+   &__data {
+      @include flexbox();
+      margin: 0px 0px 25px 0px;
+   }
+
+   &__data-left {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 29px;
+      @media (max-width: $md3) {
+         font-size: 16px;
+         line-height: 24px;
+      }
+   }
+
+   &__data-center {
+      font-size: 24px;
+      margin: 0px 15px 0px 15px;
+   }
+
+   &__data-right {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 29px;
+      color: #8695A4;
+      @media (max-width: $md3) {
+         font-size: 16px;
+         line-height: 24px;
+      }
+   }
+
+}
+
+
+
+
